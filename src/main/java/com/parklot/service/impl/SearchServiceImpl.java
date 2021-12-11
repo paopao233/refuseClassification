@@ -55,7 +55,7 @@ public class SearchServiceImpl implements SearchService {
      */
     public String api1(String content) {
         String url = "https://v2.alapi.cn/api/garbage";
-        String token = "EUbdXQgSriSpP6oy";
+        String token = ""; //token请到alapi.cn申请
         Map<String, Object> paramMap = new HashMap<>();
         paramMap.put("token", token);
         paramMap.put("name", content);
