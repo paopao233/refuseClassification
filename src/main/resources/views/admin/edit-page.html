@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Admin Dashboard" />
+    <meta name="keywords" content="Admin, Dashboard" />
+    <meta name="author" content="Md. Rifat Islam" />
+    <title>Admin Dashboard</title>
+
+    <!-- Fav Icon -->
+    <link rel="icon" href="images/favicon.png" type="image/gif" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/e422e8ad98.js" crossorigin="anonymous"></script>
+
+    <!-- Boxiocns CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link rel="stylesheet" href="styles/all-events.css">
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo-details">
+            <i class="fas fa-user-shield fs-6"></i>
+            <span class="logo_name fs-5 normal-font">Admin</span>
+        </div>
+
+        <ul class="nav-links">
+            <li class="active">
+                <a href="index.html">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="link_name">Dashboard</span>
+                </a>
+            </li>
+
+            <li class="mydropdown drop-item">
+                <div class="iocn-link">
+                    <a href="#">
+                        <i class='bx bx-calendar-event'></i>
+                        <span class="link_name">Events Manage</span>
+                    </a>
+                    <i class='bx bxs-chevron-down arrow'></i>
+                </div>
+
+                <ul class="sub-menu">
+                    <li><a href="all-events.html">All Events</a></li>
+                    <li><a href="add-new-event.html">Add New Event</a></li>
+                </ul>
+            </li>
+
+            <li class="drop-item">
+                <div class="iocn-link">
+                    <a href="#">
+                        <i class='bx bx-news'></i>
+                        <span class="link_name">News</span>
+                    </a>
+                    <i class='bx bxs-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a href="all-news.html">All News</a></li>
+                    <li><a href="add-new-post.html">Add New Post</a></li>
+                </ul>
+            </li>
+
+            <li class="drop-item">
+                <div class="iocn-link">
+                    <a href="#">
+                        <i class='bx bx-notepad'></i>
+                        <span class="link_name">Pages</span>
+                    </a>
+                    <i class='bx bxs-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a href="all-pages.html">All Pages</a></li>
+                    <li><a href="add-new-page.html">Add New Page</a></li>
+                </ul>
+            </li>
+
+            <li class="drop-item">
+                <div class="iocn-link">
+                    <a href="#">
+                        <i class='bx bx-book-alt'></i>
+                        <span class="link_name">Appearance</span>
+                    </a>
+                    <i class='bx bxs-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a href="topbar-settings.html">Topbar Settings</a></li>
+                    <li><a href="menubar-settings.html">Menubar Settings</a></li>
+                    <li><a href="media-images.manage.html">Media Images Manage</a></li>
+                    <li><a href="home-variant.html">Home Variant</a></li>
+                    <li><a href="menu-manage.html">Menu Manage</a></li>
+                </ul>
+            </li>
+
+            <li class="drop-item">
+                <div class="iocn-link">
+                    <a href="#">
+                        <i class='bx bx-customize'></i>
+                        <span class="link_name">All Page Settings</span>
+                    </a>
+                    <i class='bx bxs-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a href="home-page-manage.html">Home Page Manage</a></li>
+                    <li><a href="about-page-manage.html">About Page Manage</a></li>
+                    <li><a href="contact-page-manage.html">Contact Page Manage</a></li>
+                    <li><a href="event-page-manage.html">Event Page Manage</a></li>
+                    <li><a href="news-page-manage.html">News Page Manage</a></li>
+                </ul>
+            </li>
+
+            <li class="drop-item">
+                <a href="languages.html">
+                    <i class='bx bx-line-chart'></i>
+                    <span class="link_name">Languages</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Main Section -->
+    <section class="main-section">
+        <div class="main-content">
+            <!-- Navbar -->
+            <div class="upper-navbar pt-2 pb-2 d-flex align-items-center flex-row flex-sm-row justify-content-between">
+                <div class="pt-2">
+                    <i class='bx bx-menu'></i>
+                </div>
+
+                <div class="d-flex align-items-center pe-2 me-1">
+
+
+                    <a href="index.html" class="btn btn-primary d-flex align-items-center py-2">
+                        <i class='bx bx-log-in me-2 hide'></i>
+                        <small>View Site</small>
+                    </a>
+                </div>
+            </div>
+
+            <!-- All Events -->
+            <section class="bg-light dashboard text-dark">
+                <div class="container">
+                    <div
+                        class="py-4 d-flex flex-column flex-sm-column flex-md-column flex-lg-row justify-content-between align-items-center">
+
+                        <div class="d-flex">
+                            <h5>Edit Page</h5>
+
+                            <div class="ms-5">
+                                <a class="text-decoration-none" href="index.html">
+                                    <span class="text-primary small-text">Home</span>
+                                </a>
+                                <span class="text-muted small-text">/ Edit Page</span>
+                            </div>
+
+                        </div>
+
+                        <form class="d-flex">
+                            <div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle p-3" type="button"
+                                    id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+
+                                    <img class="img-fluid profile-picture me-2" src="images/021630312842.png"
+                                        alt="profile picture">
+                                    Sopnil Sohan
+                                </button>
+
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item" href="edit-profile.html">Edit Profile</a></li>
+                                    <li><a class="dropdown-item" href="password-change.html">Password Change</a></li>
+                                    <li><button class="dropdown-item">Logout</button></li>
+                                </ul>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Table Part -->
+                    <div class="row row-cols-1 row-cols-md-1 g-4 pb-4">
+                        <!-- Box -->
+                        <div class="col">
+                            <div class="card h-100 shadow">
+                                <div class="card-body">
+                                    <div
+                                        class="d-flex my-3 flex-column flex-lg-row align-items-center justify-content-between">
+
+                                        <div class="d-flex my-2 w-100 me-3">
+                                            <h5 class="mb-4">Edit Page</h5>
+                                        </div>
+
+                                        <div class="d-flex my-2 w-100">
+                                            <select class="form-select me-2 w-100" aria-label="Default select example">
+                                                <option selected>English (UK)</option>
+                                                <option value="arabic">Arabic</option>
+                                            </select>
+
+                                            <a href="all-pages.html" class="btn btn-primary small-text w-100">
+                                                All Blog Post
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <form>
+                                        <div class="mb-3">
+                                            <label class="form-label text-muted">
+                                                Title
+                                            </label>
+                                            <input placeholder="Title" type="text" class="form-control">
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label text-muted">
+                                                Slug
+                                            </label>
+                                            <input placeholder="Slug" type="text" class="form-control">
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label text-muted">
+                                                Page Content
+                                            </label>
+
+                                            <textarea class="form-control" cols="30" rows="10"></textarea>
+                                        </div>
+
+                                        <div class="row g-3">
+                                            <div class="col">
+                                                <div class="mb-3">
+                                                    <label class="form-label text-muted">
+                                                        Meta Title
+                                                    </label>
+                                                    <input placeholder="Meta Title" type="text" class="form-control">
+                                                </div>
+                                            </div>
+
+                                            <div class="col">
+                                                <div class="mb-3">
+                                                    <label class="form-label text-muted">
+                                                        Og Meta Title
+                                                    </label>
+                                                    <input placeholder="Og Meta Title" type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-3">
+                                            <div class="col">
+                                                <div class="mb-3">
+                                                    <label class="form-label text-muted">
+                                                        Meta Description
+                                                    </label>
+
+                                                    <textarea class="form-control" cols="30" rows="10"></textarea>
+                                                </div>
+                                            </div>
+
+                                            <div class="col">
+                                                <div class="mb-3">
+                                                    <label class="form-label text-muted">
+                                                        Og Meta Description
+                                                    </label>
+
+                                                    <textarea class="form-control" cols="30" rows="10"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-3">
+                                            <div class="col">
+                                                <div class="mb-3">
+                                                    <label class="form-label text-muted">
+                                                        Meta Tags
+                                                    </label>
+                                                    <input placeholder="Meta Tags" type="text" class="form-control">
+                                                </div>
+                                            </div>
+
+                                            <div class="col">
+                                                <div class="mb-3">
+                                                    <label class="form-label text-muted">
+                                                        OG Meta Image
+                                                    </label>
+
+                                                    <input type="file" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label text-muted">
+                                                Visibility
+                                            </label>
+
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option selected>All</option>
+                                                <option value="loggedIn">Only Logged In User</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label text-muted">
+                                                Status
+                                            </label>
+
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option selected>Publish</option>
+                                                <option value="draft">Draft</option>
+                                            </select>
+                                        </div>
+
+                                        <button type="submit" class="btn btn-primary">
+                                            Update
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mx-3 py-3 d-flex justify-content-between">
+            <p class="text-muted small-text">© 2021 All right reserved by Restaurant Admin</p>
+            <p class="text-muted small-text">V-1.0.0</p>
+        </footer>
+    </section>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+
+    <!-- External Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>

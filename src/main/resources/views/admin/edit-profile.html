@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh_CN" xmlns:th="http://www.thymeleaf.org">
+<!--引入头部资源-->
+<div th:replace="~{commons/ad_header::header}"></div>
+
+<body>
+<!-- Sidebar -->
+<!--引入Sidebar资源-->
+<div th:replace="~{commons/ad_sidebar::sidebar}"></div>
+
+<!-- Main Section -->
+    <section class="main-section">
+        <div class="main-content">
+            <!-- Navbar -->
+            <div th:replace="~{commons/ad_sidebar::navbar}"></div>
+
+
+            <!-- All Events -->
+            <section class="bg-light dashboard text-dark">
+                <div class="container">
+                    <div
+                        class="py-4 d-flex flex-column flex-sm-column flex-md-column flex-lg-row justify-content-between align-items-center">
+
+                        <div class="d-flex">
+                            <h5>修改个人信息</h5>
+
+                            <div class="ms-5">
+                                <a class="text-decoration-none" href="index.html" th:href="@{/toIndexPage}">
+                                    <span class="text-primary small-text">首页</span>
+                                </a>
+                                <span class="text-muted small-text">/修改个人信息</span>
+                            </div>
+
+                        </div>
+
+                        <!--个人信息-->
+                        <div th:replace="~{commons/ad_sidebar::profile}"></div>
+
+                    </div>
+
+                    <!-- Table Part -->
+                    <div class="row row-cols-1 row-cols-md-1 g-4 pb-4">
+                        <!-- Box -->
+                        <div class="col">
+                            <div class="card h-100 shadow">
+                                <div class="card-body">
+                                    <form class="mt-4">
+                                        <div class="mb-3">
+                                            <label class="form-label text-muted small-text">
+                                                用户名
+                                            </label>
+
+                                            <input th:if="${session.user ne null}" th:value="${session.user.username}" placeholder="用户名" style="color: #0c1b29" type="text" class="form-control" >
+                                            <input th:if="${session.user eq null}" placeholder="用户名" type="text" class="form-control" >
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label text-muted small-text">
+                                                昵称
+                                            </label>
+
+                                            <input placeholder="昵称" type="text" class="form-control" style="color: #0c1b29" >
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label text-muted small-text">
+                                                邮箱
+                                            </label>
+
+                                            <input th:if="${session.user eq null}"  placeholder="邮箱" type="email" class="form-control" >
+                                            <input th:if="${session.user ne null}" th:value="${session.user.email}"  placeholder="邮箱" type="email" class="form-control" style="color: #0c1b29">
+                                        </div>
+
+                                        <button type="submit" class="btn btn-primary">
+                                            确认修改
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <!--引入第一部分的footer资源-->
+        <div th:replace="~{commons/ad_footer::footer_first}"></div>
+    </section>
+<!--引入第二部分的footer资源-->
+<div th:replace="~{commons/ad_footer::footer_seconed}"></div>
+
+</body>
+
+</html>

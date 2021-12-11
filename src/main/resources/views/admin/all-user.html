@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh_CN" xmlns:th="http://www.thymeleaf.org">
+<!--引入头部资源-->
+<div th:replace="~{commons/ad_header::header}"></div>
+
+<body>
+<!-- Sidebar -->
+<!--引入Sidebar资源-->
+<div th:replace="~{commons/ad_sidebar::sidebar}"></div>
+
+
+<!-- Main Section -->
+<section class="main-section">
+    <div class="main-content">
+        <!-- Navbar -->
+        <div th:replace="~{commons/ad_sidebar::navbar}"></div>
+
+        <!-- All Pages -->
+        <section class="bg-light dashboard text-dark">
+            <div class="container">
+                <div
+                        class="py-4 d-flex flex-column flex-sm-column flex-md-column flex-lg-row justify-content-between align-items-center">
+
+                    <div class="d-flex">
+                        <h5>所有会员</h5>
+
+                        <div class="ms-5">
+                            <a class="text-decoration-none" href="index.html" th:href="@{/toIndexPage}">
+                                <span class="text-primary small-text">首页</span>
+                            </a>
+                            <span class="text-muted small-text">/ 所有会员</span>
+                        </div>
+
+                    </div>
+
+                    <!--个人信息-->
+                    <div th:replace="~{commons/ad_sidebar::profile}"></div>
+
+                </div>
+
+                <!-- Table Part -->
+                <div class="row row-cols-1 row-cols-md-1 g-4 pb-4">
+                    <!-- Box -->
+                    <div class="col">
+                        <div class="card h-100 shadow">
+                            <div class="card-body">
+                                <h5 class="mb-4">所有会员信息</h5>
+
+                                <div style="overflow-x:auto;">
+                                    <table>
+                                        <tr>
+                                            <th>用户ID</th>
+                                            <th>用户名</th>
+                                            <th>邮箱</th>
+                                            <th class="text-center">状态</th>
+                                            <th class="text-center">创建时间</th>
+                                            <th class="text-center">最后登录时间</th>
+                                            <th>操作</th>
+
+                                        </tr>
+
+                                        <tr th:if="${userList eq null}">
+                                            <td>未查询到相关的信息哦，可能数据库为空呢！</td>
+                                        </tr>
+
+                                        <tr th:if="${userList ne null}" th:each="userList:${userList}">
+                                            <td>[[${userList.id}]]</td>
+                                            <td>[[${userList.username}]]</td>
+                                            <td>[[${userList.email}]]</td>
+                                            <td>
+                                                <div class="bg-success p-2 text-center text-white rounded mx-auto"
+                                                     style="width: 150px;">
+                                                    <i class="fas fa-check-square me-2"></i>
+                                                    活跃
+                                                </div>
+                                            </td>
+                                            <td class="text-center">[[${userList.createTime}]]</td>
+                                            <td class="text-center">[[${userList.updateTime}]]</td>
+
+                                            <td>
+                                                <div class="row row-cols-1 row-cols-md-1 row-cols-lg-4 g-2 mb-2">
+                                                    <div class="col">
+                                                        <button data-bs-toggle="modal" data-bs-target="#deleteModal"
+                                                                class="btn btn-danger">
+                                                            <i class="fas fa-trash text-white"></i>
+                                                        </button>
+                                                    </div>
+
+                                                    <div class="col" style="margin-left: 4px;">
+                                                        <a href="edit-page.html" class="btn btn-primary">
+                                                            <i class="fas fa-pen-fancy text-white"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+
+                                            </td>
+                                        </tr>
+
+                                        <!-- Delete Modal -->
+                                        <div class="modal fade" id="deleteModal" tabindex="-1"
+                                             aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="btn-close"
+                                                                data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+
+                                                    <div class="modal-body text-center">
+                                                        <h4>Are you sure?</h4>
+                                                        <p class="small-text text-muted">
+                                                            此操作将会从数据库删除本条信息，确定要这么做吗？
+                                                        </p>
+                                                    </div>
+
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-primary">
+                                                            坚决删除
+                                                        </button>
+
+                                                        <button type="button" class="btn btn-danger"
+                                                                data-bs-dismiss="modal">
+                                                            取消
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </table>
+                                </div>
+
+                                <div
+                                        class="d-flex my-3 flex-column flex-lg-row align-items-center justify-content-between">
+
+                                    <div class="d-flex align-items-center justify-content-start my-2 w-100 me-3">
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <!--引入第一部分的footer资源-->
+    <div th:replace="~{commons/ad_footer::footer_first}"></div>
+</section>
+<!--引入第二部分的footer资源-->
+<div th:replace="~{commons/ad_footer::footer_seconed}"></div>
+
+</body>
+
+</html>

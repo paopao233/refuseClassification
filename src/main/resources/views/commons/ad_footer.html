@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="zh_CN" xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="footer_first">
+    <footer class="mx-3 py-3 d-flex justify-content-between">
+        <p class="text-muted small-text">© 2021 All right reserved by 那个什么组&啊乐</p>
+        <p class="text-muted small-text">V-1.0.0</p>
+    </footer>
+</div>
+
+<div th:fragment="footer_seconed">
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="assets/js/sweetalert2.js" th:src="@{/assets/js/sweetalert2.js}"></script>
+    <script src="assets/js/alter.js" th:src="@{/assets/js/alter.js}"></script>
+    <!-- External Script -->
+    <script src="script.js" th:src="@{/assets/js/script.js}"></script>
+</div>

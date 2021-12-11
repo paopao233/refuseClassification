@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh_CN" xmlns:th="http://www.thymeleaf.org">
+<!--sidebar-->
+<div th:fragment="sidebar">
+    <div class="sidebar">
+        <div class="logo-details">
+            <i class="fas fa-user-shield fs-6"></i>
+            <span th:if="${session.user ne null}"
+                  class="logo_name fs-5 normal-font">欢迎您：[[${session.user.username}]]</span>
+            <span th:if="${session.user eq null}" class="logo_name fs-5 normal-font">你还没登录！</span>
+
+        </div>
+
+        <ul class="nav-links">
+            <li th:class="${active == 'dashboard'}?'active':''">
+                <a href="index.html" th:href="@{/toDashboard}">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="link_name">管理首页</span>
+                </a>
+            </li>
+
+            <li class="drop-item" th:class="${active == 'allUser'}?'drop-item active':'drop-item'">
+                <div class="iocn-link">
+                    <a href="#">
+                        <i class='bx bx-notepad'></i>
+                        <span class="link_name">用户管理</span>
+                    </a>
+                    <i class='bx bxs-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a th:href="@{/toUser}">所有用户</a></li>
+                    <li><a th:href="@{/toAddUser}">添加新用户</a></li>
+                </ul>
+            </li>
+
+            <li class="mydropdown drop-item" th:class="${active == 'classification'}?'drop-item active':'drop-item'">
+                <div class="iocn-link">
+                    <a href="#">
+                        <i class='bx bx-calendar-event'></i>
+                        <span class="link_name">垃圾分类词条管理</span>
+                    </a>
+                    <i class='bx bxs-chevron-down arrow'></i>
+                </div>
+
+                <ul class="sub-menu">
+                    <li><a th:href="@{/toAllClassification}">所有词条</a></li>
+                    <li><a th:href="@{/toAddClassification}">添加新词条</a></li>
+                </ul>
+            </li>
+
+
+            <li th:class="${active == 'loginInfo'}?'active':''">
+                <a href="index.html" th:href="@{/toAllLoginInfo}">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="link_name">用户登录记录</span>
+                </a>
+            </li>
+
+
+        </ul>
+    </div>
+</div>
+
+<!--navbar-->
+<div th:fragment="navbar">
+    <div class="upper-navbar pt-2 pb-2 d-flex align-items-center flex-row flex-sm-row justify-content-between">
+        <div class="pt-2">
+            <i class='bx bx-menu'></i>
+        </div>
+
+        <div class="d-flex align-items-center pe-2 me-1">
+            <a href="index.html" class="btn btn-primary d-flex align-items-center py-2" th:href="@{/toIndexPage}">
+                <i class='bx bx-log-in me-2 hide'></i>
+                <small>返回搜索页面</small>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!--个人信息-->
+<div th:fragment="profile">
+    <form class="d-flex">
+        <div class="dropdown">
+            <button th:if="${session.user ne null}" class="btn btn-primary dropdown-toggle p-3" type="button"
+                    id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                <img class="img-fluid profile-picture me-2" src="images/021630312842.jpg"
+                     th:src="@{/assets/images/021630312842.jpg}"
+                     alt="profile picture">[[${session.user.username}]]
+            </button>
+
+            <button th:if="${session.user eq null}" class="btn btn-primary dropdown-toggle p-3" type="button"
+                    id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                <img class="img-fluid profile-picture me-2" src="images/021630312842.jpg"
+                     th:src="@{/assets/images/021630312842.jpg}"
+                     alt="profile picture">你还没有登录！
+            </button>
+
+
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" th:href="@{/toEditProfile}">修改个人信息</a></li>
+                <li><a class="dropdown-item" th:href="@{/toChangePassword}">更改密码</a></li>
+                <li>
+                    <button class="dropdown-item" th:href="@{/logout}">退出登录</button>
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>

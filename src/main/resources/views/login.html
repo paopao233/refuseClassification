@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<!--引入头部公共部分-->
+<div th:replace="~{commons/header::header}"></div>
+
+    <section class="register-photo login-photo">
+        <div class="form-container">
+            <form method="post" th:action="@{/user/login}" th:object="${userVO}">
+                <h2 class="text-center">登录，看见这个世界</h2>
+                <input type="hidden" id="msg1" th:value="${msg1}" >
+                <input type="hidden" id="msgCode1" th:value="${msgCode1}">
+                <div class="form-group"><input required class="form-control" type="text" name="text" th:field="*{username}" placeholder="用户名"></div>
+                <div class="form-group"><input required class="form-control" type="password" name="password" th:field="*{password}" placeholder="密码"></div>
+                <div class="form-group">
+                    <div class="form-check"><label class="form-check-label"><input class="form-check-input" type="checkbox">记住本次登录的密码</label></div>
+                </div>
+                <div class="form-group"><button class="btn btn-primary btn-block" type="submit">登录</button></div><a class="already" href="./signup.html" th:href="@{/toSignUpPage}">还没有账号吗？点击这里注册把！</a>
+            </form>
+            <div class="image-holder"></div>
+        </div>
+    </section>
+
+<!--引入footer公共部分-->
+<div th:replace="~{commons/footer::footer}"></div>

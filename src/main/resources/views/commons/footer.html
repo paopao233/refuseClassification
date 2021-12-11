@@ -1,0 +1,30 @@
+<!DOCTYPE html >
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="footer">
+<footer class="bg-light footer" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 text-center text-lg-left my-auto h-100">
+                <ul class="list-inline mb-2">
+                    <li class="list-inline-item"><a href="./about.html" th:href="@{/toAboutPage}">关于我们</a></li>
+                    <li class="list-inline-item"><span>⋅</span></li>
+                    <li class="list-inline-item"><a href="./about.html" th:href="@{/toAboutPage}">联系我们</a></li>
+                    <li class="list-inline-item"><span>⋅</span></li>
+                    <li class="list-inline-item"><a href="./about.html" th:href="@{/toAboutPage}">隐私保护</a></li>
+                </ul>
+                <p class="text-muted small mb-4 mb-lg-0">© 那个什么组&啊乐 2021. All Rights Reserved.</p>
+            </div>
+
+        </div>
+    </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+<script src="assets/js/bs-init.js" th:src="@{/assets/js/bs-init.js}"></script>
+<script src="assets/js/sweetalert2.js" th:src="@{/assets/js/sweetalert2.js}"></script>
+<script src="assets/js/alter.js" th:src="@{/assets/js/alter.js}"></script>
+
+</body>
+</html>
+</div>

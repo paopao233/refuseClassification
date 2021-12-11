@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh_CN" xmlns:th="http://www.thymeleaf.org">
+<!--引入头部资源-->
+<div th:replace="~{commons/ad_header::header}"></div>
+
+<body>
+<!-- Sidebar -->
+<!--引入Sidebar资源-->
+<div th:replace="~{commons/ad_sidebar::sidebar}"></div>
+
+
+<!--首页主要内容-->
+<!-- Main Section -->
+<section class="main-section">
+    <div class="main-content">
+        <!-- Navbar -->
+        <div th:replace="~{commons/ad_sidebar::navbar}"></div>
+
+        <!-- Dashboard -->
+        <section class="bg-light dashboard text-dark">
+            <div class="container">
+                <div class="py-4 d-flex flex-column flex-sm-column flex-md-column flex-lg-row justify-content-between align-items-center">
+
+                    <div class="d-flex">
+                        <h5>垃圾分类检索系统后台管理页面</h5>
+
+                        <div class="ms-5">
+                            <a class="text-decoration-none" href="index.html" th:href="@{/toIndexPage}">
+                                <span class="text-primary small-text">首页</span>
+                            </a>
+                            <span class="text-muted small-text">/ 后台管理页面</span>
+                        </div>
+
+                    </div>
+
+                    <!--个人信息-->
+                    <div th:replace="~{commons/ad_sidebar::profile}"></div>
+
+                </div>
+
+                <!-- First Part -->
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 pb-4">
+                    <!-- Box -->
+                    <div class="col-2">
+                        <div class="card h-100 shadow bg-primary text-white more-radious">
+                            <div class="card-body">
+                                <div class="row row-cols-2 g-0 mt-3">
+                                    <div class="col text-end">
+                                        <i class="fas fa-user-shield text-white fs-1 me-3"></i>
+                                    </div>
+
+                                    <div class="col">
+                                        <h2 class="mb-0 fs-3">[[${dashboardMap[adminNum]}]]&nbsp个</h2>
+                                        <span class="small-text">管理员</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Box -->
+                    <div class="col-2">
+                        <div class="card h-100 shadow bg-primary text-white more-radious">
+                            <div class="card-body">
+                                <div class="row row-cols-2 g-0 mt-3">
+                                    <div class="col text-end">
+                                        <i class="fas fa-users text-white fs-1 me-3"></i>
+                                    </div>
+
+                                    <div class="col">
+                                        <h2 class="mb-0 fs-3">[[${dashboardMap[ordinaryNum]}]]&nbsp个</h2>
+                                        <span class="small-text">用户</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Box -->
+                    <div class="col-2">
+                        <div class="card h-100 shadow bg-primary text-white more-radious">
+                            <div class="card-body">
+                                <div class="row row-cols-2 g-0 mt-3">
+                                    <div class="col text-end">
+                                        <i class="fas fa-archive text-white fs-1 me-3"></i>
+                                    </div>
+
+                                    <div class="col">
+                                        <h2 class="mb-0 fs-3">[[${dashboardMap[classificationNum]}]]&nbsp条</h2>
+                                        <span class="small-text">垃圾分类词条</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Box -->
+                    <div class="col">
+                        <div class="card h-100 shadow bg-primary text-white more-radious">
+                            <div class="card-body">
+                                <div class="row row-cols-2 g-0 mt-3">
+                                    <div class="col text-end">
+                                        <i class="fas fa-archive text-white fs-1 me-3"></i>
+                                    </div>
+
+                                    <div class="col">
+                                        <h2 class="mb-0 fs-3">[[${dashboardMap[loginInfoNum]}]]&nbsp条</h2>
+                                        <span class="small-text">登录记录</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+        </section>
+        <!-- Table Part -->
+        <div class="row row-cols-1 row-cols-md-1 row-cols-lg-2 g-4 pb-4">
+            <!-- Box -->
+            <div class="col">
+                <div class="card h-100 shadow">
+                    <div class="card-body">
+                        <h5 class="mb-4">最近的登录记录</h5>
+
+                        <div style="overflow-x:auto;">
+                            <table>
+                                <tr>
+                                    <th>记录ID</th>
+                                    <th>用户名</th>
+                                    <th>登录ip</th>
+                                    <th>登录状态</th>
+                                    <th>登录时间</th>
+                                </tr>
+
+                                <tr th:if="${loginList eq null}">
+                                    <td>未查询到相关的信息哦，可能数据库为空呢！</td>
+                                </tr>
+
+                                <tr th:if="${loginList ne null} " th:each="loginInfo:${loginList}">
+                                    <td>#[[${loginInfo.id}]]</td>
+                                    <td>[[${loginInfo.username}]]</td>
+                                    <td>[[${loginInfo.ip}]]</td>
+                                    <td>
+                                        <div class="bg-success p-2 text-center text-white rounded">
+                                            <i class="fas fa-check-square me-2"></i> 成功
+                                        </div>
+                                    </td>
+                                    <td>[[${loginInfo.loginTime}]]</td>
+                                </tr>
+
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Box -->
+            <div class="col">
+                <div class="card h-100 shadow">
+                    <div class="card-body">
+                        <h5 class="mb-4">最近添加的垃圾分类词条</h5>
+
+                        <div style="overflow-x:auto;">
+                            <table>
+                                <tr>
+                                    <th>词条ID</th>
+                                    <th>词条内容</th>
+                                    <th>所属分类</th>
+                                    <th>词条状态</th>
+                                    <th>添加者</th>
+                                    <th>添加时间</th>
+                                </tr>
+
+                                <tr th:if="${classifications eq null}">
+                                    <td>未查询到相关的信息哦，可能数据库为空呢！</td>
+                                </tr>
+
+
+                                <tr th:if="${classifications ne null}" th:each="items:${classifications}">
+                                    <td>#[[${items.id}]]</td>
+                                    <td>[[${items.content}]]</td>
+                                    <td>[[${items.belongto}]]</td>
+                                    <td>
+                                        <div class="bg-success p-2 text-center text-white rounded"><i
+                                                class="fas fa-check-square me-2"></i>可用
+                                        </div>
+                                    </td>
+                                    <td>[[${items.bywho}]]</td>
+                                    <td>[[${items.createTime}]]</td>
+                                </tr>
+
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <!-- Footer -->
+    <!--引入第一部分的footer资源-->
+    <div th:replace="~{commons/ad_footer::footer_first}"></div>
+</section>
+<!--引入第二部分的footer资源-->
+<div th:replace="~{commons/ad_footer::footer_seconed}"></div>
+
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+spring:
+  thymeleaf:
+    cache: true
+    prefix: classpath:/views/
+  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://127.0.0.1:3306/reuse?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+#    username: root
+#    password: park^@^7788
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://43.129.251.6:3306/reuse?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    username: reuse
+    password: 2zsNZsAN5RCMFxFz
+#    开启post
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true

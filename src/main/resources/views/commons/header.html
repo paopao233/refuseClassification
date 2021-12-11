@@ -1,0 +1,31 @@
+<!DOCTYPE html >
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<!--头部公共资源-->
+<div th:fragment="header">
+<head >
+    <!--版权所有 啊乐~-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="parklot垃圾分类检索系统实训作业，BY啊乐" />
+    <meta name="keywords" content="实训作业, 垃圾分类检索系统" />
+    <title>首页 - parklot垃圾检索系统</title>
+    <link rel="stylesheet" th:href="@{/assets/bootstrap/css/bootstrap.min.css}" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.cnpmjs.org/css?family=Lato:300,400,700,300italic,400italic,700italic" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" th:href="@{/assets/css/font-awesome.min.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
+    <link rel="stylesheet" th:href="@{/assets/css/styles.css}" href="assets/css/styles.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" th:href="@{/assets/css/animate.min.css}">
+</head>
+
+<body>
+<nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
+    <div class="container"><a class="navbar-brand" href="./index.html" th:href="@{/toIndexPage}">parklot垃圾分类检索系统</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"></button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <a th:if="${session.user eq null}" class="btn btn-primary ml-auto" role="button" href="./login.html" th:href="@{/toLoginPage}">登录</a>
+            <a th:if="${session.user ne null}" class="btn btn-primary ml-auto" role="button" href="./login.html" th:href="@{/toDashboard}">管理后台</a>
+        </div>
+    </div>
+</nav>
+<input type="hidden" id="msg1" th:value="${msg1}" >
+<input type="hidden" id="msgCode1" th:value="${msgCode1}">
+</div>

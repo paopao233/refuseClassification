@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<!--引入头部公共部分-->
+<div th:replace="~{commons/header::header}"></div>
+
+
+    <header class="text-center text-white masthead" style="background:url('assets/img/bg-masthead.png')no-repeat center center;background-size:cover;">
+        <div class="overlay"></div>
+        <div class="container mb-5">
+            <div class="row ">
+
+                <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+                    <form th:action="@{/getSearchContent}" th:object="${searchVO}">
+                        <div class="form-row">
+                            <div class="col-12 col-md-9 mb-2 mb-md-0"><input class="form-control form-control-lg" required type="text" th:field="*{content}" placeholder="搜索一下这是什么垃圾？"></div>
+                            <div class="col-12 col-md-3"><button class="btn btn-primary btn-block btn-lg" type="submit" style="background-color: #378455;
+    border-color: #41895d;">再搜索一下</button></div>
+                        </div>
+                    </form>
+
+                    <div class="search_form mx-auto ">
+                        <span class="float-left">搜索结果：<a href="#classification">不懂垃圾分类的区别？点我吧！</a></span>
+                        <div class="clearfix"></div>
+                        <div class="col-md-auto mx-auto search_content ">
+                            <p th:if="${searchContent ne null}" style="font-size:40px;">[[${searchKey}]] 属于 <span style="color: rgb(211, 247, 10);" th:text="${searchContent}"></span></p>
+                            <p style="color: black;font-size: 28px" th:if="${searchContent eq null}">啊哦~你输入的信息查询不到哦，再检查一下吧。</p>
+                            <a href="#addAnswer" style="color: white;">查询不对？点我提交正确的答案！</a>
+                            <!-- <p>下班啦！！现在已经晚上23.52了！</p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="features-boxed " id="classification">
+        <div class="container ">
+            <div class="intro ">
+                <h2 class="text-center ">垃圾分类区分（以广州市为准）</h2>
+                <p class="text-center ">让我们更好的了解垃圾分类！</p>
+            </div>
+            <div class="row justify-content-center features ">
+                <div class="col-sm-6 col-md-5 col-lg-3 item ">
+                    <div class="box "><i class="fa fa-recycle icon "></i>
+                        <h3 class="name ">可回收物</h3>
+                        <p class="description ">指废纸张、废塑料、废玻璃制品、废金属、废织物等适宜回收、可循环利用的生活废弃物。</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-3 item ">
+                    <div class="box "><i class="fa fa-globe icon "></i>
+                        <h3 class="name ">有害垃圾</h3>
+                        <p class="description ">有害垃圾是指生活中产生的对人体健康或者自然环境造成直接或潜在危害的物质。</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-3 item ">
+                    <div class="box "><i class="fa fa-trash icon "></i>
+                        <h3 class="name ">厨余垃圾</h3>
+                        <p class="description ">厨余垃圾是指生活中产生的易腐烂、易变质发臭的废弃物。&nbsp</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-3 item ">
+                    <div class="box "><i class="fa fa-thermometer-half icon "></i>
+                        <h3 class="name ">其他垃圾</h3>
+                        <p class="description ">其他垃圾是指居民家庭生活中产生的除餐厨垃圾、有害垃圾、可回收物之外的生活垃圾。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="text-center text-white call-to-action " id="addAnswer">
+        <div class="overlay "></div>
+        <div class="container ">
+            <div class="row ">
+                <div class="col-xl-9 mx-auto ">
+                    <h2 class="mb-4 ">查询不到想要的答案？在下面进行添加吧~</h2>
+                </div>
+                <div class="col-md-10 col-lg-8 col-xl-7 mx-auto ">
+                    <form method="get" th:action="@{/addSearchContent}" th:object="${searchVO}">
+                        <div class="form-row">
+                            <div class="col-12 col-md-9 mb-2 mb-md-0">
+                                <input class="form-control form-control-lg" th:field="*{addContent}" placeholder="请输入垃圾的所属分类，比如：纸巾属于干垃圾 ">
+                            </div>
+                            <div class="col-12 col-md-3">
+                                <button class="btn btn-primary btn-block btn-lg" type="submit">添加</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+<!--引入footer公共部分-->
+<div th:replace="~{commons/footer::footer}"></div>

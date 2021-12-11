@@ -1,0 +1,37 @@
+#flexSwitchCheckDefault {
+    cursor: pointer;
+}
+
+.small-text {
+    font-size: 14px;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+    font-size: 14px;
+  }
+  
+  tr:nth-child(even){background-color: #f2f2f2}
+
+  .yellow-border {
+      border-left: 4px solid yellow;
+  }
+
+  .green-border {
+    border-left: 4px solid rgb(42, 206, 42);
+  }
+
+@media only screen and (max-width: 600px) {
+    .hide {
+      display: none;
+    }
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh_CN" xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="header">
+<head>
+    <!-- Required Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="parklot垃圾分类检索系统实训作业，BY啊乐" />
+    <meta name="keywords" content="实训作业, 垃圾分类检索系统" />
+    <meta name="author" content="Md. Rifat Islam" />
+    <title>后台 - parklot垃圾分类检索系统</title>
+
+    <!-- Fav Icon -->
+    <link rel="icon" href="images/favicon.png" th:href="@{/assets/images/favicon.png}" type="image/gif" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/e422e8ad98.js" crossorigin="anonymous" th:src="@{/assets/js/e422e8ad98.js}"></script>
+
+    <!-- Boxiocns CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.cnpmjs.org/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles/style.css" th:href="@{/assets/styles/style.css}">
+    <link rel="stylesheet" href="styles/dashboard.css" th:href="@{/assets/styles/dashboard.css}">
+</head>
+    <input type="hidden" id="msg1" th:value="${msg1}" >
+    <input type="hidden" id="msgCode1" th:value="${msgCode1}">
+</div>

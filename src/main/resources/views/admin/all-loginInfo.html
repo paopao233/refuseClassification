@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh_CN" xmlns:th="http://www.thymeleaf.org">
+<!--引入头部资源-->
+<div th:replace="~{commons/ad_header::header}"></div>
+
+<body>
+<!-- Sidebar -->
+<!--引入Sidebar资源-->
+<div th:replace="~{commons/ad_sidebar::sidebar}"></div>
+
+
+<!-- Main Section -->
+    <section class="main-section">
+        <div class="main-content">
+            <!-- Navbar -->
+            <div th:replace="~{commons/ad_sidebar::navbar}"></div>
+
+            <!-- All Pages -->
+            <section class="bg-light dashboard text-dark">
+                <div class="container">
+                    <div
+                        class="py-4 d-flex flex-column flex-sm-column flex-md-column flex-lg-row justify-content-between align-items-center">
+
+                        <div class="d-flex">
+                            <h5>所有用户登录记录信息</h5>
+
+                            <div class="ms-5">
+                                <a class="text-decoration-none" href="index.html" th:href="@{/toIndexPage}">
+                                    <span class="text-primary small-text">首页</span>
+                                </a>
+                                <span class="text-muted small-text">/ 所有用户登录记录信息</span>
+                            </div>
+
+                        </div>
+
+                        <!--个人信息-->
+                        <div th:replace="~{commons/ad_sidebar::profile}"></div>
+
+                    </div>
+
+                    <!-- Table Part -->
+                    <div class="row row-cols-1 row-cols-md-1 g-4 pb-4">
+                        <!-- Box -->
+                        <div class="col">
+                            <div class="card h-100 shadow">
+                                <div class="card-body">
+                                    <h5 class="mb-4">所有用户登录记录信息</h5>
+
+                                    <div style="overflow-x:auto;">
+                                        <table>
+                                            <tr>
+                                                <th>记录ID</th>
+                                                <th>用户名</th>
+                                                <th>登录ip</th>
+                                                <th class="text-center">登录状态</th>
+                                                <th class="text-center">登录时间</th>
+                                            </tr>
+
+                                            <tr th:if="${loginList eq null}">
+                                                <td>未查询到相关的信息哦，可能数据库为空呢！</td>
+                                            </tr>
+
+                                            <tr th:if="${loginList ne null} " th:each="loginInfo:${loginList}">
+                                                <td>#[[${loginInfo.id}]]</td>
+                                                <td>[[${loginInfo.username}]]</td>
+                                                <td>[[${loginInfo.ip}]]</td>
+                                                <td>
+                                                    <div class="bg-success p-2 text-center text-white rounded">
+                                                        <i class="fas fa-check-square me-2"></i> 成功
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">[[${loginInfo.loginTime}]]</td>
+
+                                            </tr>
+
+
+                                        </table>
+                                    </div>
+
+                                    <div
+                                        class="d-flex my-3 flex-column flex-lg-row align-items-center justify-content-between">
+
+                                        <div class="d-flex align-items-center justify-content-start my-2 w-100 me-3">
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <!--引入第一部分的footer资源-->
+        <div th:replace="~{commons/ad_footer::footer_first}"></div>
+    </section>
+<!--引入第二部分的footer资源-->
+<div th:replace="~{commons/ad_footer::footer_seconed}"></div>
+
+</body>
+
+</html>

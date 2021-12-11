@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<!--引入头部公共部分-->
+<div th:replace="~{commons/header::header}"></div>
+
+    <header class="text-center text-white masthead" style="background:url('assets/img/bg-masthead.png')no-repeat center center;background-size:cover;">
+        <div class="overlay"></div>
+        <div class="container mb-5">
+            <div class="row ">
+                <div class="col-xl-9 mx-auto">
+                    <h1 class="mb-5">让这个世界多一份环保</h1>
+                </div>
+                <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+                    <form th:action="@{/getSearchContent}" th:object="${searchVO}">
+                        <div class="form-row">
+                            <div class="col-12 col-md-9 mb-2 mb-md-0"><input class="form-control form-control-lg" type="text" required th:field="*{content}" placeholder="搜索一下这是什么垃圾？"></div>
+                            <div class="col-12 col-md-3"><button class="btn btn-primary btn-block btn-lg" type="submit" style="background-color: #378455;
+    border-color: #41895d;">搜索一下</button></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="text-center bg-light features-icons">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="mx-auto features-icons-item mb-5 mb-lg-0 mb-lg-3">
+                        <div class="d-flex features-icons-icon"><i class="icon-trash m-auto text-primary" data-bss-hover-animate="pulse" style="color: #36865c!important;"></i></div>
+                        <h3>分类投放垃圾，关系你我</h3>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="mx-auto features-icons-item mb-5 mb-lg-0 mb-lg-3">
+                        <div class="d-flex features-icons-icon"><i class="icon-eye m-auto text-primary" data-bss-hover-animate="pulse" style="color: #36865c!important;"></i></div>
+                        <h3>人以群分，物以类聚</h3>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="mx-auto features-icons-item mb-5 mb-lg-0 mb-lg-3">
+                        <div class="d-flex features-icons-icon"><i class="icon-share m-auto text-primary" data-bss-hover-animate="pulse" style="color: #36865c!important;"></i></div>
+                        <h3>创意生活，文明分类</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="text-center text-white call-to-action">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 mx-auto">
+                    <h2 class="mb-4">查询不到想要的答案？在下面进行添加吧~</h2>
+                </div>
+                <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+                    <form method="get" th:action="@{/addSearchContent}" th:object="${searchVO}">
+                        <div class="form-row">
+                            <div class="col-12 col-md-9 mb-2 mb-md-0">
+                                <input class="form-control form-control-lg" th:field="*{addContent}" placeholder="请输入垃圾的所属分类，比如：纸巾属于干垃圾 ">
+                            </div>
+                            <div class="col-12 col-md-3">
+                                <button class="btn btn-primary btn-block btn-lg" type="submit">添加</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!--引入footer公共部分-->
+<div th:replace="~{commons/footer::footer}"></div>

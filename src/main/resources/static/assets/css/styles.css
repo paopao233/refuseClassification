@@ -1,0 +1,287 @@
+/* 文章 */
+
+.article-clean {
+    color: #56585b;
+    background-color: #eef4f7;
+    font-family: 'Lora', serif;
+    font-size: 14px;
+}
+
+.article-text {
+    background-color: #ffffff;
+    padding: 40px 60px;
+    color: #505e6c;
+    border-radius: 20px 20px 0 0;
+}
+
+.article-clean .intro {
+    font-size: 16px;
+    margin: 0 auto 30px;
+}
+
+.article-clean .intro h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    padding-top: 20px;
+    line-height: 1.5;
+    color: inherit;
+    margin-top: 20px;
+}
+
+.article-clean .intro p {
+    color: #929292;
+    font-size: 12px;
+}
+
+.article-clean .intro p .by {
+    font-style: italic;
+}
+
+.article-clean .intro p .date {
+    text-transform: uppercase;
+    padding: 4px 0 4px 10px;
+    margin-left: 10px;
+    border-left: 1px solid #ddd;
+}
+
+.article-clean .intro p a {
+    color: #333;
+    text-transform: uppercase;
+    padding-left: 3px;
+}
+
+.article-clean .intro img {
+    margin-top: 20px;
+}
+
+.article-clean .text p {
+    margin-bottom: 20px;
+    line-height: 1.45;
+}
+
+@media (min-width:768px) {
+    .article-clean .text p {
+        font-size: 16px;
+    }
+}
+
+.article-clean .text h2 {
+    margin-top: 28px;
+    margin-bottom: 20px;
+    line-height: 1.45;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+@media (min-width:768px) {
+    .article-clean .text h2 {
+        font-size: 20px;
+    }
+}
+
+.article-clean .text figure {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.article-clean .text figure img {
+    margin-bottom: 12px;
+    max-width: 100%;
+}
+
+
+/* 登录注册 */
+
+.register-photo {
+    background: #f1f7fc;
+    padding: 80px 0;
+}
+
+.register-photo .image-holder {
+    display: table-cell;
+    width: auto;
+    background: url(../../assets/img/signup-bg.jpg);
+    background-size: cover;
+}
+
+.login-photo .image-holder {
+    display: table-cell;
+    width: auto;
+    background: url(../../assets/img/login-bg.jpg);
+    background-size: cover;
+}
+
+.register-photo .form-container {
+    display: table;
+    max-width: 900px;
+    width: 90%;
+    margin: 0 auto;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.register-photo form {
+    display: table-cell;
+    width: 400px;
+    background-color: #ffffff;
+    padding: 40px 60px;
+    color: #505e6c;
+}
+
+@media (max-width:991px) {
+    .register-photo form {
+        padding: 40px;
+    }
+}
+
+.register-photo form h2 {
+    font-size: 24px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+.register-photo form .form-control {
+    background: #f7f9fc;
+    border: none;
+    border-bottom: 1px solid #dfe7f1;
+    border-radius: 0;
+    box-shadow: none;
+    outline: none;
+    color: inherit;
+    text-indent: 6px;
+    height: 40px;
+}
+
+.register-photo form .form-check {
+    font-size: 13px;
+    line-height: 20px;
+}
+
+.register-photo form .btn-primary {
+    background: #10283e;
+    border: none;
+    border-radius: 4px;
+    padding: 11px;
+    box-shadow: none;
+    margin-top: 35px;
+    text-shadow: none;
+    outline: none !important;
+}
+
+.login-photo form .btn-primary {
+    background: #388e15;
+    border: none;
+    border-radius: 4px;
+    padding: 11px;
+    box-shadow: none;
+    margin-top: 35px;
+    text-shadow: none;
+    outline: none !important;
+}
+
+.register-photo form .btn-primary:hover,
+.register-photo form .btn-primary:active {
+    background: #0c1b29;
+}
+
+.login-photo form .btn-primary:hover,
+.login-photo form .btn-primary:active {
+    background: #358515;
+}
+
+.register-photo form .btn-primary:active {
+    transform: translateY(1px);
+}
+
+.register-photo form .already {
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    color: #6f7a85;
+    opacity: 0.9;
+    text-decoration: none;
+}
+
+
+/*搜索页面*/
+
+.features-boxed {
+    color: #313437;
+    background-color: #eef4f7;
+}
+
+.features-boxed p {
+    color: #7d8285;
+}
+
+.features-boxed h2 {
+    font-weight: bold;
+    margin-bottom: 40px;
+    padding-top: 40px;
+    color: inherit;
+}
+
+@media (max-width:767px) {
+    .features-boxed h2 {
+        margin-bottom: 25px;
+        padding-top: 25px;
+        font-size: 24px;
+    }
+}
+
+.features-boxed .intro {
+    font-size: 16px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.features-boxed .intro p {
+    margin-bottom: 0;
+}
+
+.features-boxed .features {
+    padding: 50px 0;
+}
+
+.features-boxed .item {
+    text-align: center;
+}
+
+.features-boxed .item .box {
+    text-align: center;
+    padding: 30px;
+    background-color: #fff;
+    margin-bottom: 30px;
+}
+
+.features-boxed .item .icon {
+    font-size: 60px;
+    color: #1485ee;
+    margin-top: 20px;
+    margin-bottom: 35px;
+}
+
+.features-boxed .item .name {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 8px;
+    margin-top: 0;
+    color: inherit;
+}
+
+.features-boxed .item .description {
+    font-size: 15px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.search_form {
+    margin-top: 60px;
+}
+
+.search_content {
+    margin-top: 5px;
+    padding: 20px 0;
+    border: 3px dotted #1f6e1f;
+}

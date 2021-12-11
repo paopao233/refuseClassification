@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh_CN" xmlns:th="http://www.thymeleaf.org">
+<!--引入头部资源-->
+<div th:replace="~{commons/ad_header::header}"></div>
+
+<body>
+<!-- Sidebar -->
+<!--引入Sidebar资源-->
+<div th:replace="~{commons/ad_sidebar::sidebar}"></div>
+
+
+<!-- Main Section -->
+<section class="main-section">
+    <div class="main-content">
+        <!-- Navbar -->
+        <div th:replace="~{commons/ad_sidebar::navbar}"></div>
+
+
+        <!-- All Events -->
+        <section class="bg-light dashboard text-dark">
+            <div class="container">
+                <div
+                        class="py-4 d-flex flex-column flex-sm-column flex-md-column flex-lg-row justify-content-between align-items-center">
+
+                    <div class="d-flex">
+                        <h5>添加新的垃圾分类词条</h5>
+
+                        <div class="ms-5">
+                            <a class="text-decoration-none" href="index.html" th:href="@{/toIndexPage}">
+                                <span class="text-primary small-text">首页</span>
+                            </a>
+                            <span class="text-muted small-text">/ 添加新的垃圾分类词条</span>
+                        </div>
+
+                    </div>
+
+                    <!--个人信息-->
+                    <div th:replace="~{commons/ad_sidebar::profile}"></div>
+
+                </div>
+
+                <!-- Table Part -->
+                <div class="row row-cols-1 row-cols-md-1 g-4 pb-4">
+                    <!-- Box -->
+                    <div class="col">
+                        <div class="card h-100 shadow">
+                            <div class="card-body">
+                                <div
+                                        class="d-flex my-3 flex-column flex-lg-row align-items-center justify-content-between">
+
+                                    <div class="d-flex my-2 w-100 me-3">
+                                        <h5 class="mb-4">添加新的垃圾分类词条</h5>
+                                    </div>
+
+
+                                </div>
+
+                                <form>
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted">
+                                            词条内容
+                                        </label>
+                                        <input placeholder="输入要查询的垃圾名称" type="text" class="form-control">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted">
+                                            所属分类
+                                        </label>
+                                        <input placeholder="输入该垃圾所属于哪个分类" type="text" class="form-control">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted">
+                                            词条状态
+                                        </label>
+
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected>可用</option>
+                                            <option value="Seminar">禁止搜索</option>
+                                            <option value="Celebration">删除</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted">
+                                            备注
+                                        </label>
+
+                                        <textarea class="form-control" cols="30" rows="10"></textarea>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary">
+                                        添加
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <!--引入第一部分的footer资源-->
+    <div th:replace="~{commons/ad_footer::footer_first}"></div>
+</section>
+<!--引入第二部分的footer资源-->
+<div th:replace="~{commons/ad_footer::footer_seconed}"></div>
+</body>
+
+</html>
